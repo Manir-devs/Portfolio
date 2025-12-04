@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manir Web Developer & Graphics Designer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="drawer-menu" id="drawerMenu">
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav class="desktop-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section" style="background-image: url('assets/background.jpg');">
+            <div class="hero-content">
+                <img src="assets/headerimage.jpg" alt="Manir Profile Image" class="profile-img">
+                <h1 class="animate-text">Hello! I am Manir</h1>
+                <p class="animate-text delay-1">A professional with <b>3 years of experience</b> in <b>Web Development</b> & <b>Logo Design</b>.</p>
+                <a href="#projects" class="cta-button animate-text delay-2">View My Projects</a>
+            </div>
+        </section>
+
+        <section id="about" class="fade-in">
+            <h2>About Me</h2>
+            <p>For the past three years, I’ve been building <b>clean, effective</b> websites for my personal portfolio. My passion lies in creating <b>user-centric</b> designs and writing clean, <b>optimized code</b>.</p>
+            <p>Whether it's a fast, responsive website or a memorable brand identity (logo), I always strive to provide solutions that achieve business goals and delight users. I focus on modern technologies and continuous learning.</p>
+        </section>
+        
+        <section id="skills" class="fade-in">
+            <h2>🛠️ My Key Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Web Development<br>(HTML, CSS, JS)</div>
+                <div class="skill-item">Logo & Branding<br>(Illustrator, Inkscape)</div>
+                <div class="skill-item">Search Engine Optimisation<br>(SEO)</div>
+                <div class="skill-item">Git & Github</div>
+                <div class="skill-item">Basic Backend<br>(Node.js/Python Flask)</div>
+                <div class="skill-item">Basic knowledge of C, Python & Assembly</div>
+            </div>
+        </section>
+
+        <section id="projects" class="fade-in">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card pop-up" style="background-image: url('assets/Toolaroo.jpg');">
+                    <h3>Web-Tools Platform</h3>
+                    <p>Designed and developed a complete, scalable web-tools platform from scratch.</p>
+                    <a href="#" target="_blank">View Case Study</a>
+                </div>
+                <div class="project-card pop-up" style="background-image: url('assets/project2.jpg');">
+                    <h3>Corporate Landing Page</h3>
+                    <p>Modern, professional, and SEO-friendly corporate website design.</p>
+                    <a href="#" target="_blank">View Live Site</a>
+                </div>
+                <div class="project-card pop-up" style="background-image: url('assets/project3.jpg');">
+                    <h3>Restaurant Logo & Identity</h3>
+                    <p>Created a unique and memorable logo and full brand identity for a local restaurant.</p>
+                    <a href="#" target="_blank">View Design</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="fade-in">
+            <h2>📞 Get In Touch</h2>
+            <p>Let's discuss your next project! I'm always open to new challenges.</p>
+            <form action="submit_form_endpoint" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Gemini Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
