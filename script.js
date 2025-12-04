@@ -64,29 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function sendMail() {
     const name = document.getElementById('userName').value;
-    const email = document.getElementById('userEmail').value;
     const description = document.getElementById('emailDescription').value;
 
-    if (!name || !email || !description) {
+    if (!name || !description) {
         alert("Please fill in all the fields.");
         return;
     }
 
-
     const recipient = "maniruz.zaman.primary@gmail.com";
+    const subject = encodeURIComponent("Inquiry for Portfolio From " + name);
+    const body = encodeURIComponent("Message:\n" + description + "\n\n---\nFrom: " + name);
 
-    // Subject
-    const subject = encodeURIComponent("Inquiry From " + name);
-
-    // Body (From user → To Manir)
-    const body = encodeURIComponent(
-        "Message:\n" + description + 
-        "\n\n---\nFrom: " + name +
-        "\nEmail: " + email
-    );
-
-    // Mailto
     const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
 
-    window.location.href = mailtoLink;
+    const win = window.open(mailtoLink);
+    if (!win) alert("Unable to open mail client. Please send manually.");
 }

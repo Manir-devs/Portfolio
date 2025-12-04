@@ -386,14 +386,70 @@ h2::after {
     align-self: flex-start;
 }
 
-/* --- Footer --- */
-footer {
-    background: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 25px 5%;
-    font-size: 0.9rem;
+
+/* ================================== */
+/* 🚀 ENHANCED PROFESSIONAL FOOTER */
+/* ================================== */
+.pro-footer {
+    background: #0d0f23;
+    padding: 40px 5%;
+    color: #d9e1ff;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: 'Inter', sans-serif;
 }
+
+.pro-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.footer-left p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.footer-right {
+    display: flex;
+    gap: 18px;
+}
+
+.pro-icon {
+    font-size: 1.4rem;
+    color: #b9c4ff;
+    padding: 10px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.pro-icon:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Desktop View */
+@media (min-width: 768px) {
+    .pro-footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
 
 /* ================================== */
 /* 🚀 Cool Animations (Keyframes) */
