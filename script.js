@@ -72,23 +72,21 @@ function sendMail() {
         return;
     }
 
+
     const recipient = "maniruz.zaman.primary@gmail.com";
-    
-    // Subject line
-    const subject = encodeURIComponent("Inquiry From Your Portfolio - " + name); 
-    
-    // Body content, including user's contact info
+
+    // Subject
+    const subject = encodeURIComponent("Inquiry From " + name);
+
+    // Body (From user → To Manir)
     const body = encodeURIComponent(
-        "Hello Gemini,\n\n" +
-        description + 
-        "\n\n---\n" +
-        "Reply To: " + email + "\n" +
-        "Sender Name: " + name
+        "Message:\n" + description + 
+        "\n\n---\nFrom: " + name +
+        "\nEmail: " + email
     );
 
-    // Final mailto link generation
+    // Mailto
     const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
 
-    // Redirect the user to their email client
     window.location.href = mailtoLink;
 }
