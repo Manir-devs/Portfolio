@@ -61,3 +61,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+function sendMail() {
+    const name = document.getElementById('userName').value;
+    const email = document.getElementById('userEmail').value;
+    const description = document.getElementById('emailDescription').value;
+
+    if (!name || !email || !description) {
+        alert("Please fill in all the fields.");
+        return;
+    }
+
+    const recipient = "maniruz.zaman.primary@gmail.com";
+    
+    // Subject line
+    const subject = encodeURIComponent("Inquiry From Your Portfolio - " + name); 
+    
+    // Body content, including user's contact info
+    const body = encodeURIComponent(
+        "Hello Gemini,\n\n" +
+        description + 
+        "\n\n---\n" +
+        "Reply To: " + email + "\n" +
+        "Sender Name: " + name
+    );
+
+    // Final mailto link generation
+    const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+    // Redirect the user to their email client
+    window.location.href = mailtoLink;
+}

@@ -32,7 +32,19 @@
     </header>
 
     <main>
-        <section id="home" class="hero-section" style="background-image: url('assets/background.jpg');">
+        <section id="home" class="hero-section">
+    <div class="bubbles-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
             <div class="hero-content">
                 <img src="assets/headerimage.jpg" alt="Manir Profile Image" class="profile-img">
                 <h1 class="animate-text">Hello! I am Manir</h1>
@@ -48,7 +60,7 @@
         </section>
         
         <section id="skills" class="fade-in">
-            <h2>🛠️ My Key Skills</h2>
+            <h2>My Key Skills</h2>
             <div class="skills-grid">
                 <div class="skill-item">Web Development<br>(HTML, CSS, JS)</div>
                 <div class="skill-item">Logo & Branding<br>(Illustrator, Inkscape)</div>
@@ -83,12 +95,15 @@
         <section id="contact" class="fade-in">
             <h2>Get In Touch</h2>
             <p>Let's discuss your next project! I'm always open to new challenges.</p>
-            <form action="submit_form_endpoint" method="POST" class="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="cta-button">Send Message</button>
-            </form>
+           <form id="contactForm" class="contact-form">
+    <input type="text" id="userName" placeholder="Your Name" required>
+    
+    <input type="email" id="userEmail" placeholder="Your Email Address" required>
+
+    <textarea id="emailDescription" placeholder="Your Message or Inquiry" rows="5" required></textarea>
+    
+    <button type="button" class="cta-button" onclick="sendMail()">Send Email</button>
+</form>
         </section>
     </main>
 

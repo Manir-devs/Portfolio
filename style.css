@@ -147,26 +147,68 @@ h2::after {
 
 /* --- Hero Section --- */
 .hero-section {
-    background-size: cover;
-    background-position: center;
-    color: white;
+    /* New Light Blue Background */
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color) 80%);
+    color: white; /* Text color remains white for contrast */
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     min-height: 90vh;
+    overflow: hidden; /* Important to hide bubbles outside the section */
 }
+/* ================================== */
+/* 🫧 Floating Bubble Animation */
+/* ================================== */
 
-.hero-section::before {
-    content: '';
+.bubbles-container {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.75); /* Dark overlay */
-    backdrop-filter: blur(2px); /* Subtle blur effect */
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Below hero-content */
+}
+
+.hero-content {
+    z-index: 10; /* Ensure content is on top */
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px; /* Start below the viewport */
+    background: rgba(56, 189, 255, 0.585); /* Semi-transparent white/blue */
+    border-radius: 50%;
+    animation: floatUp infinite ease-in; /* Attach the animation */
+    box-shadow: 0 0 10px rgba(60, 183, 255, 0.587);
+}
+
+/* Bubble Sizes and Animation Durations (Randomization) */
+.bubbles-container .bubble:nth-child(1) { width: 40px; height: 40px; left: 10%; animation-duration: 15s; }
+.bubbles-container .bubble:nth-child(2) { width: 20px; height: 20px; left: 20%; animation-duration: 20s; animation-delay: 2s; }
+.bubbles-container .bubble:nth-child(3) { width: 50px; height: 50px; left: 35%; animation-duration: 12s; animation-delay: 1s; }
+.bubbles-container .bubble:nth-child(4) { width: 80px; height: 80px; left: 50%; animation-duration: 25s; }
+.bubbles-container .bubble:nth-child(5) { width: 35px; height: 35px; left: 65%; animation-duration: 18s; animation-delay: 3s; }
+.bubbles-container .bubble:nth-child(6) { width: 60px; height: 60px; left: 75%; animation-duration: 10s; }
+.bubbles-container .bubble:nth-child(7) { width: 90px; height: 90px; left: 85%; animation-duration: 22s; animation-delay: 1s; }
+.bubbles-container .bubble:nth-child(8) { width: 25px; height: 25px; left: 45%; animation-duration: 14s; animation-delay: 4s; }
+.bubbles-container .bubble:nth-child(9) { width: 70px; height: 70px; left: 5%; animation-duration: 16s; animation-delay: 2s; }
+.bubbles-container .bubble:nth-child(10) { width: 45px; height: 45px; left: 95%; animation-duration: 19s; animation-delay: 5s; }
+/* Keyframe for Floating Bubbles */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-50vh) rotate(180deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg); /* Move up 100% of viewport height */
+        opacity: 0; /* Fade out as it leaves the top */
+    }
 }
 
 .hero-content {
@@ -182,7 +224,7 @@ h2::after {
     object-fit: cover;
     border: 5px solid var(--accent-color);
     margin-bottom: 20px;
-    box-shadow: 0 0 0 10px rgba(238, 155, 0, 0.2);
+    box-shadow: 0 0 0 10px rgba(0, 110, 255, 0.2);
 }
 
 .hero-content h1 {
@@ -213,7 +255,7 @@ h2::after {
 }
 
 .cta-button:hover {
-    background: #ffb74a;
+    background: #00369b;
     transform: translateY(-3px) scale(1.02); /* Lift and slight zoom */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -305,7 +347,7 @@ h2::after {
 }
 
 .project-card a:hover {
-    color: #ffdb58;
+    color: #0086ce;
     text-decoration: underline;
 }
 
